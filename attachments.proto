@@ -1,0 +1,31 @@
+// attachments/proto/hero.proto
+syntax = "proto3";
+
+package attachments;
+
+// import "google/protobuf/empty.proto";
+
+service AttachmentsService {
+  rpc FindAll(AttachmentsRequest) returns (AttachmentsResponse) {
+    
+  }
+}
+
+message AttachmentsRequest {
+  int32 id = 1;
+}
+
+message Attachment {
+  int32 id = 1;
+  string attachmentUrl = 2;
+  int32 dashboardId = 3;
+  int32  userId = 4;
+  string userName = 5;
+  string serviceName = 6;
+  string createdAt = 7;
+  string updatedAt = 8;
+}
+
+message AttachmentsResponse {
+  repeated Attachment attachments = 1;
+}
